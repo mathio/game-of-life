@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="game.css" />
+    <title>Game of Life</title>
+  </head>
+  <body>
+    <h1>Conway's Game of Life</h1>
+
+    <form action="" method="get">
+      <h2>1. Set matrix size and game interval</h2>
+      <label for="size">Size:</label>
+      <input type="number" id="size" name="size" min="4" max="100" value="20" />
+      <label for="size">Interval:</label>
+      <input
+        type="number"
+        id="interval"
+        name="interval"
+        min="100"
+        max="1000"
+        step="100"
+        value="500"
+      />
+      ms
+      <button>Prepare game</button>
+    </form>
+
+    <div>
+      <div class="form">
+        <h2>2. Set initial state</h2>
+        <p>Click cells to make them alive / dead</p>
+      </div>
+      <button id="start-button">Start game</button>
+    </div>
+
+    <p id="timer"></p>
+
+    <div id="canvas"></div>
+    <script src="game.js"></script>
+  </body>
+</html>
