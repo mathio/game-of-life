@@ -87,7 +87,7 @@ let interval = 500;
 
 const initialize = () => {
   const params = new URLSearchParams(window.location.search);
-  const size = parseInt(params.get("size") || 10, 10);
+  const size = parseInt(params.get("size") || 50, 10);
   interval = parseInt(params.get("interval") || 500, 10);
 
   qs("#size").value = size;
