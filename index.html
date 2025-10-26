@@ -8,7 +8,12 @@
     <title>Game of Life</title>
   </head>
   <body>
-    <h1>Conway's Game of Life (<a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">wiki</a>)</h1>
+    <h1>
+      Conway's Game of Life (<a
+        href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life"
+        >wiki</a
+      >)
+    </h1>
 
     <form action="" method="get">
       <h2>1. Set matrix size and game interval</h2>
@@ -22,7 +27,7 @@
         min="100"
         max="1000"
         step="100"
-        value="500"
+        value="200"
       />
       ms
       <button>Prepare game</button>
@@ -31,9 +36,45 @@
     <div>
       <div class="form">
         <h2>2. Set initial state</h2>
-        <p>Click cells to make them alive / dead</p>
+        <p>
+          <label for="pattern-select">Choose a pattern:</label>
+          <select id="pattern-select">
+            <option value="">Empty</option>
+            <optgroup label="Oscillators">
+              <option value="blinker">Blinker</option>
+              <option value="toad">Toad</option>
+              <option value="pulsar">Pulsar</option>
+              <option value="penta-decathlon">Penta-decathlon</option>
+            </optgroup>
+            <optgroup label="Spaceships">
+              <option value="glider">Glider</option>
+              <option value="lwss">Light-weight spaceship</option>
+              <option value="mwss">Middle-weight spaceship</option>
+              <option value="hwss">Heavy-weight spaceship</option>
+            </optgroup>
+            <optgroup label="Methuselahs">
+              <option value="r-pentomino">The R-pentomino</option>
+              <option value="diehard">Diehard</option>
+              <option value="acorn">Acorn</option>
+            </optgroup>
+            <optgroup label="Guns">
+              <option value="gosper-glider-gun" selected>
+                Gosper glider gun
+              </option>
+              <option value="simkin-glider-gun">Simkin glider gun</option>
+            </optgroup>
+          </select>
+        </p>
+        <p>
+          Or choose "Empty" and make your own pattern (click cells to make them
+          alive / dead).
+        </p>
       </div>
-      <button id="start-button">Start game</button>
+
+      <div>
+        <h2>3. Play</h2>
+        <p><button id="start-button">Start game</button></p>
+      </div>
     </div>
 
     <p id="timer"></p>
